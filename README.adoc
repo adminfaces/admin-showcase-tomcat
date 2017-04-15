@@ -1,3 +1,3 @@
 = Admin Showcase Tomcat
 
-http://github.com/adminfaces/admin-showcase/[AdminS howcase^] configured to run on apache Tomcat (tested on version `8.5.3`).
+http://github.com/adminfaces/admin-showcase/[Admin Showcase^] configured to run on apache Tomcat (tested on version `8.5.3`).
