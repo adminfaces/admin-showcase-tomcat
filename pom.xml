@@ -62,16 +62,26 @@
 		<dependency>
 			<groupId>com.github.adminfaces</groupId>
 			<artifactId>admin-template</artifactId>
-			<version>1.0.0-RC1</version>
-			<!-- Update lib
+			<version>1.0.0-20170409.194239-17</version>
+			<!-- end::dep-admin-template[] -->
 			<exclusions>
-        		<exclusion>
-					<dependency>
-						<groupId>org.omnifaces</groupId>
-						<artifactId>omnifaces</artifactId>
-					</dependency>
+				<exclusion>
+					<groupId>com.github.adminfaces</groupId>
+					<artifactId>admin-theme</artifactId>
 				</exclusion>
-			</exclusions> -->
+			</exclusions>
+		</dependency>
+		<!-- tag::dep-admin-theme[] -->
+		<dependency>
+			<groupId>com.github.adminfaces</groupId>
+			<artifactId>admin-theme</artifactId>
+			<version>1.0.0-20170415.172255-35</version>
+			<!--<classifier>dev</classifier> uncompressed theme.css -->
+		</dependency>
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>6.1.RC3</version>
 		</dependency>
 		<dependency>
 			<groupId>org.primefaces.extensions</groupId>
@@ -115,5 +125,20 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
+
+	<repositories>
+		<repository>
+			<snapshots/>
+			<id>snapshots</id>
+			<name>libs-snapshot</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</repository>
+		<repository>
+			<id>prime-repo</id>
+			<name>PrimeFaces Maven Repository</name>
+			<url>http://repository.primefaces.org</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
 
 </project>

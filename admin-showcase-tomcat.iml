@@ -5,6 +5,7 @@
       <configuration>
         <descriptors>
           <deploymentDescriptor name="context.xml" url="file://$MODULE_DIR$/src/main/webapp/META-INF/context.xml" />
+          <deploymentDescriptor name="jboss-web.xml" url="file://$MODULE_DIR$/src/main/webapp/WEB-INF/jboss-web.xml" />
           <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/src/main/webapp/WEB-INF/web.xml" />
         </descriptors>
         <webroots>
@@ -14,7 +15,7 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -33,12 +34,13 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.jboss.weld.servlet:weld-servlet:2.4.2.Final" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.faces:javax.faces-api:2.2" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.glassfish:javax.faces:2.2.14" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final" level="project" />
     <orderEntry type="library" name="Maven: javax.ejb:javax.ejb-api:3.2" level="project" />
     <orderEntry type="library" name="Maven: javax.transaction:javax.transaction-api:1.2" level="project" />
-    <orderEntry type="library" name="Maven: com.github.adminfaces:admin-template:1.0.0-RC1" level="project" />
-    <orderEntry type="library" name="Maven: org.primefaces:primefaces:6.0" level="project" />
-    <orderEntry type="library" name="Maven: com.github.adminfaces:admin-theme:1.0.0-RC1" level="project" />
+    <orderEntry type="library" name="Maven: com.github.adminfaces:admin-template:1.0.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.22" level="project" />
+    <orderEntry type="library" name="Maven: com.github.adminfaces:admin-theme:1.0.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.primefaces:primefaces:6.1.RC3" level="project" />
     <orderEntry type="library" name="Maven: org.primefaces.extensions:primefaces-extensions:6.0.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.2.4" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.1" level="project" />
