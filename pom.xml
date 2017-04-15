@@ -47,11 +47,11 @@
 
 		<!-- API do JPA e EJB para o Admin Template (View de OptimisticLockException) 
 			TODO: Fork para depender apenas de Servlet/JSF -->
-		<!--<dependency>
+		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
 			<artifactId>hibernate-jpa-2.0-api</artifactId>
 			<version>1.0.1.Final</version>
-		</dependency>-->
+		</dependency>
 		<dependency>
 			<groupId>javax.ejb</groupId>
 			<artifactId>javax.ejb-api</artifactId>
