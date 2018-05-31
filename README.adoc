@@ -2,4 +2,4 @@
 
 http://github.com/adminfaces/admin-showcase/[Admin Showcase^] configured to run on apache Tomcat (tested on version `8.5.3`).
 
-After deploy access localhost:8080/showcase
+After deploy access http://localhost:8080/showcase
