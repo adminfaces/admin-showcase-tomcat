@@ -4,8 +4,7 @@
                 xmlns:p="http://primefaces.org/ui"
                 xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:adm="http://github.com/adminfaces"
-                template="/WEB-INF/templates/template.xhtml">
-
+                template="#{layoutMB.template}">
 
     <ui:define name="title">
         Messages
@@ -17,11 +16,10 @@
 
     <ui:define name="body">
         <adm:breadcrumb title="Messages"/>
-        <p:panel styleClass="box-info" header="Messages">
+        <p:panel styleClass="card box-info" header="Messages">
             <p:tooltip/>
 
             <h:form>
-                <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true"/>
                 <p:growl autoUpdate="true" showDetail="true" life="3000" severity="info"/>
                 <p:growl autoUpdate="true" showDetail="true" sticky="true" severity="warn,error,fatal"/>
 
@@ -48,11 +46,20 @@
                     <div class="ui-g-4">
                         <p:message id="msgDefault" for="default"/>
                     </div>
-                      <div class="ui-g-12">
+
+                    <div class="ui-g-8 ui-sm-12">
+                        <div class="material">
+                            <p:inputText id="material" required="true" placeholder="Material placeholder"/>
+                            <p:outputLabel for="material" value="Material input *"/>
+                            <p:message for="material"/>
+                        </div>
+                    </div>
+
+                    <div class="ui-g-12">
                         <p:outputLabel for="select" value="Select"/>
                     </div>
-                     <div class="ui-g-8">
-                        <p:selectOneMenu id="select" value="#{null}" required="true">
+                    <div class="ui-g-8">
+                        <p:selectOneMenu id="select" value="#{userLoginMB.selected}" required="true">
                             <f:selectItem itemLabel="Select"/>
                             <f:selectItem itemLabel="Credit Card" itemValue="Credit Card"/>
                             <f:selectItem itemLabel="Deposit" itemValue="Deposit"/>
@@ -61,6 +68,28 @@
                     </div>
                     <div class="ui-g-4">
                         <p:message id="msgSelect" for="select"/>
+                    </div>
+                    <div class="ui-g-12">
+                        <p:outputLabel for="autocomplete" value="Auto Complete"/>
+                    </div>
+                    <div class="ui-g-8">
+                        <p:autoComplete id="autocomplete" completeMethod="#{autoCompleteMB.completeText}"
+                                        dropdown="true" required="true"/>
+                    </div>
+                    <div class="ui-g-4">
+                        <p:message id="msgAutocomplete" for="autocomplete"/>
+                    </div>
+                    <div class="ui-g-12">
+                        <p:outputLabel for="chkmenu-multiple" value="Checkbox Menu Multiple"/>
+                    </div>
+                    <div class="ui-g-8">
+                        <p:selectCheckboxMenu id="chkmenu-multiple" label="Cities" required="true"
+                                              multiple="true" filter="true" filterMatchMode="startsWith">
+                            <f:selectItems value="#{checkboxMB.cities}"/>
+                        </p:selectCheckboxMenu>
+                    </div>
+                    <div class="ui-g-4">
+                        <p:message id="multiple" for="chkmenu-multiple"/>
                     </div>
                     <div class="ui-g-12">
                         <p:outputLabel for="txt" value="Text"/>
@@ -91,6 +120,7 @@
                     <div class="ui-g-4">
                         <p:message id="msgTt" for="tt" display="tooltip"/>
                     </div>
+
                     <div class="ui-g-4">
                         <p:commandButton id="submitButton" styleClass="btn-primary" value="Submit" update="@form"
                                          ignoreAutoUpdate="true"/>
@@ -103,7 +133,7 @@
     </ui:define>
 
     <ui:define name="code">
-        <p:tabView>
+        <p:tabView styleClass="hidden-sm hidden-xs">
             <p:tab title="messages.xhtml">
            <pre>
                <code class="language-html">
@@ -121,5 +151,25 @@
              </pre>
             </p:tab>
         </p:tabView>
+
+        <p:accordionPanel styleClass="hidden-md hidden-lg no-icon">
+            <p:tab title="messages.xhtml">
+           <pre>
+               <code class="language-html">
+                   <h:outputText value="#{sourceCodeMB.getPageSource()}" escape="true"/>
+               </code>
+           </pre>
+            </p:tab>
+
+            <p:tab title="MessagesMB.java">
+              <pre>
+               <code class="language-java">
+                   <h:outputText value="#{sourceCodeMB.getJavaSource('com.github.adminfaces.showcase.bean.MessagesMB')}"
+                                 escape="false"/>
+               </code>
+             </pre>
+            </p:tab>
+        </p:accordionPanel>
+
     </ui:define>
 </ui:composition>

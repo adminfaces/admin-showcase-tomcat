@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui">
 
+    <style type="text/css">
 
-    <ul class="sidebar-menu">
+        @-moz-document url-prefix() {
+            li span.label-danger {
+                margin-top: -20px;
+            }
+        }
+    </style>
+
+    <ul class="sidebar-menu tree" data-widget="tree">
         <li>
             <p:link href="/index.xhtml">
                 <i class="fa fa-home"></i>
                 <span>Home</span>
-            </p:link>
-        </li>
-        <li>
-            <p:link href="/docs/index.html" target="_blank">
-                <i class="fa fa-book"></i>
-                <span>Documentation</span>
             </p:link>
         </li>
         <li class="header">
@@ -33,17 +36,24 @@
             </p:link>
         </li>
         <li>
-            <p:link href="/login.xhtml">
-                <i class="fa fa-users"></i>
-                <span>Logon</span>
+            <p:link href="/pages/material/inputs.xhtml">
+                <i class="fa fa-google"></i>
+                <span class="label label-danger pull-right" style="line-height: inherit">NEW</span>
+                <span>Material inputs</span>
+            </p:link>
+        </li>
+        <li>
+            <p:link href="/pages/components/messages.xhtml">
+                <i class="fa fa-envelope"></i>
+                <span>Messages</span>
             </p:link>
         </li>
         <li class="treeview">
             <a href="#">
                 <i class="fa fa-laptop"></i>
                 <span>UI Elements</span>
-            <span class="pull-right-container">
-                     <i class="fa fa-angle-left pull-right"></i>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
                 </span>
             </a>
             <ul class="treeview-menu">
@@ -51,6 +61,12 @@
                     <p:link href="/pages/components/accordion.xhtml">
                         <i class="fa fa-bars"></i>
                         <span>Accordion</span>
+                    </p:link>
+                </li>
+                <li>
+                    <p:link href="/pages/components/autocomplete.xhtml">
+                        <i class="fa fa-sort-amount-desc"></i>
+                        <span>AutoComplete</span>
                     </p:link>
                 </li>
                 <li>
@@ -78,15 +94,33 @@
                     </p:link>
                 </li>
                 <li>
-                    <p:link href="/pages/components/messages.xhtml">
-                        <i class="fa fa-envelope-o"></i>
-                        <span>Messages</span>
+                    <p:link href="/pages/components/dragDrop.xhtml" >
+                        <i class="fa fa-clone"></i>
+                        <span>DragDrop</span>
+                    </p:link>
+                </li>
+                <li>
+                    <p:link href="/pages/components/inputGroup.xhtml" >
+                        <i class="fa fa-sliders"></i>
+                        <span>InputGroup</span>
                     </p:link>
                 </li>
                 <li>
                     <p:link href="/pages/components/panel.xhtml">
                         <i class="fa fa-window-maximize"></i>
                         <span>Panels</span>
+                    </p:link>
+                </li>
+                <li>
+                    <p:link href="/pages/components/sidebar.xhtml" >
+                        <i class="fa fa-arrows-alt"></i>
+                        <span>Sidebar</span>
+                    </p:link>
+                </li>
+                <li>
+                    <p:link href="/pages/components/steps.xhtml" >
+                        <i class="fa fa-angle-double-right"></i>
+                        <span>Steps</span>
                     </p:link>
                 </li>
                 <li>
@@ -101,7 +135,93 @@
                         <span>TabView</span>
                     </p:link>
                 </li>
+                <li>
+                    <p:link href="/pages/components/toolbar.xhtml">
+                        <i class="fa fa-credit-card"></i>
+                        <span>Toolbar</span>
+                    </p:link>
+                </li>
+                <li>
+                    <p:link href="/pages/components/tree.xhtml">
+                        <i class="fa fa-tree"></i>
+                        <span>Tree</span>
+                    </p:link>
+                </li>
+                <li>
+                    <p:link href="/pages/components/triState.xhtml">
+                        <i class="fa fa-check-square-o"></i>
+                        <span>TriStateCheckbox</span>
+                    </p:link>
+                </li>
+                <li>
+                    <p:link href="/pages/components/upload.xhtml">
+                        <i class="fa fa-upload"></i>
+                        <span>Upload</span>
+                    </p:link>
+                </li>
 
+                <li>
+                    <p:link href="/pages/components/wizard.xhtml">
+                        <i class="fa fa-indent"></i>
+                        <span>Wizard</span>
+                    </p:link>
+                </li>
+            </ul>
+        </li>
+        <li class="treeview">
+            <a href="#">
+                <i class="fa fa-files-o"></i>
+                <span>Custom Pages</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li>
+                    <p:link href="/login.xhtml" title="Logon page">
+                        <i class="fa fa-users"></i>
+                        <span>Logon</span>
+                    </p:link>
+                </li>
+
+                <li>
+                    <p:link href="/pages/material/login.xhtml" title="Logon page">
+                        <i class="fa fa-user-circle"></i>
+                        <span style="font-weight: bold;text-decoration: underline">Material</span> Logon
+                    </p:link>
+                </li>
+
+
+                <li>
+                    <p:link href="/403.xhtml" title="Access denied page">
+                        <i class="fa fa-circle-o"></i>
+                        <span>403</span>
+                    </p:link>
+                </li>
+                <li>
+                    <p:link href="/non-existing.xhtml" title="404 page">
+                        <i class="fa fa-circle-o"></i>
+                        <span>404</span>
+                    </p:link>
+                </li>
+                <li>
+                    <p:link href="/500.xhtml" title="500 page">
+                        <i class="fa fa-circle-o"></i>
+                        <span>500</span>
+                    </p:link>
+                </li>
+                <li>
+                    <p:link href="/expired.xhtml" title="View expired page">
+                        <i class="fa fa-circle-o"></i>
+                        <span>View expired</span>
+                    </p:link>
+                </li>
+                <li>
+                    <p:link href="/optimistic.xhtml" title="Optimistic lock page">
+                        <i class="fa fa-circle-o"></i>
+                        <span>Optimistic lock</span>
+                    </p:link>
+                </li>
             </ul>
         </li>
 
@@ -115,6 +235,13 @@
             </p:link>
         </li>
         <li>
+            <p:link href="/pages/layout/controlsidebar.xhtml">
+                <i class="fa fa-gears"></i>
+                <span class="label label-danger pull-right" style="line-height: inherit">NEW</span>
+                <span>ControlSidebar</span>
+            </p:link>
+        </li>
+        <li>
             <p:link href="/pages/layout/menu.xhtml">
                 <i class="fa fa-outdent"></i>
                 <span>Menu</span>
@@ -122,7 +249,7 @@
         </li>
         <li>
             <p:link href="/pages/layout/skin.xhtml">
-                <i class="fa fa-gears"></i>
+                <i class="fa fa-newspaper-o"></i>
                 <span>Skins</span>
             </p:link>
         </li>
@@ -132,11 +259,21 @@
                 <span>Sidebar</span>
             </p:link>
         </li>
+        <li>
+            <p:link href="/horizontal-layout" onclick="$('#link-horizontal-layout').click();return false">
+                <i class="fa fa-credit-card"></i>
+                <span><b>Horizontal</b> layout</span>
+            </p:link>
+            <h:form prependId="false">
+                <p:commandLink id="link-horizontal-layout" action="#{layoutMB.toggleTemplate()}" ajax="false"/>
+            </h:form>
+        </li>
+
     </ul>
 
     <script type="text/javascript">
-        if(isMobile()) {
-           $('ul.sidebar-menu a.ui-link').click(function() {
+        if (isMobile()) {
+            $('ul.sidebar-menu a.ui-link').click(function () {
                 $(this).prop('disabled', true);
                 showBar();
             })
