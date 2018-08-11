@@ -62,7 +62,7 @@
         <dependency>
             <groupId>com.github.adminfaces</groupId>
             <artifactId>admin-template</artifactId>
-            <version>1.0.0-RC15</version>
+            <version>1.0.0-RC18</version>
             <!-- end::dep-admin-template[] -->
             <exclusions>
                 <exclusion>
@@ -75,7 +75,7 @@
         <dependency>
             <groupId>com.github.adminfaces</groupId>
             <artifactId>admin-theme</artifactId>
-            <version>1.0.0-RC15</version>
+            <version>1.0.0-RC18</version>
             <!--<classifier>dev</classifier> uncompressed theme.css -->
         </dependency>
         <dependency>
@@ -88,11 +88,7 @@
             <artifactId>primefaces-extensions</artifactId>
             <version>6.1.1</version>
         </dependency>
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>font-awesome</artifactId>
-            <version>4.7.0</version>
-        </dependency>
+         
         <!-- 
                 Tomcat 8.5.4:
                 http://stackoverflow.com/a/39286497/2956677

@@ -36,7 +36,10 @@
         <p:panel styleClass="card no-border" header="Material inputs">
             <p:tooltip/>
 
-            <div class="callout callout-info">
+            <div class="callout-card callout-info">
+                <h4>
+                    <span class="glyphicon glyphicon-info-sign"/>
+                </h4>
                 <p>Material design inputs must be surrounded by a <code>div</code> with class
                     <code>ui-material</code> and its label must be placed <span
                             style="font-weight:bold;text-decoration: underline">after the input</span>.</p>
@@ -45,7 +48,7 @@
             <h:form>
                 <div class="ui-g ui-fluid">
 
-                    <div class="ui-g-8 ui-sm-12">
+                    <div class="ui-g-6 ui-sm-12">
                         <div class="ui-material">
                             <p:inputText id="input" required="true" placeholder="Material placeholder"/>
                             <p:outputLabel for="input" value="Material input"/>
@@ -53,21 +56,21 @@
                         </div>
                     </div>
 
-                    <div class="ui-g-8 ui-sm-12">
-                        <div class="material no-float">
+                    <div class="ui-g-6 ui-sm-12">
+                        <div class="ui-material no-float">
                             <p:inputText id="input-no-float" required="true" placeholder="Material without floating label"/>
                             <p:message for="input-no-float"/>
                         </div>
                     </div>
 
-                    <div class="ui-g-8 ui-sm-12">
+                    <div class="ui-g-6 ui-sm-12">
                         <div class="ui-material">
                             <p:inputText id="disabled" value="pre filled value" disabled="true" />
                             <p:outputLabel for="disabled" value="Material input disabled"/>
                             <p:message for="disabled"/>
                         </div>
                     </div>
-                    <div class="ui-g-8 ui-sm-12">
+                    <div class="ui-g-6 ui-sm-12">
                         <div class="ui-material">
                             <p:selectOneMenu id="select" value="#{userLoginMB.selected}" required="true">
                                 <f:selectItem itemLabel="Select"/>
@@ -80,7 +83,7 @@
                         </div>
                     </div>
 
-                    <div class="ui-g-8 ui-sm-12">
+                    <div class="ui-g-6 ui-sm-12">
                         <div class="ui-material">
                             <p:autoComplete id="autocomplete" completeMethod="#{autoCompleteMB.completeText}"
                                             placeholder="Autocomplete placeholder"
@@ -90,7 +93,7 @@
                         </div>
                     </div>
 
-                    <div class="ui-g-8 ui-sm-12">
+                    <div class="ui-g-6 ui-sm-12">
                         <div class="ui-material">
                             <p:calendar id="material-calendar" showOn="both" placeholder="Calendar placeholder"
                                         required="true">
@@ -101,7 +104,7 @@
                         </div>
                     </div>
 
-                    <div class="ui-g-8 ui-sm-12">
+                    <div class="ui-g-6 ui-sm-12">
                         <div class="ui-material">
                             <p:password id="password" placeholder="Password placeholder" required="true">
                                 <i class="fa fa-2x fa-lock"/>
@@ -111,7 +114,7 @@
                         </div>
                     </div>
 
-                    <div class="ui-g-8 ui-sm-12">
+                    <div class="ui-g-6 ui-sm-12">
                         <div class="ui-material">
                             <p:inputTextarea id="textarea" placeholder="Textarea placeholder" required="true"/>
                             <p:outputLabel for="textarea" value="Material textarea"/>
@@ -119,7 +122,7 @@
                         </div>
                     </div>
 
-                    <div class="ui-g-8 ui-sm-12">
+                    <div class="ui-g-6 ui-sm-12">
                         <div class="ui-material">
                             <p:selectCheckboxMenu id="chkmenu" label="Cities" required="true"
                                                   multiple="true" filter="true" filterMatchMode="startsWith">
@@ -130,7 +133,7 @@
                         </div>
                     </div>
 
-                    <div class="ui-g-8 ui-sm-12">
+                    <div class="ui-g-6 ui-sm-12">
                         <div class="ui-material">
                             <p:inputText id="icon" required="true" placeholder="Material placeholder">
                                 <i class="fa fa-2x fa-user-circle"/>
@@ -140,8 +143,8 @@
                         </div>
                     </div>
 
-                    <div class="ui-g-8 ui-sm-12">
-                        <div class="material icon-left">
+                    <div class="ui-g-6 ui-sm-12">
+                        <div class="ui-material icon-left">
                             <p:inputText id="user-icon" required="true" placeholder="Icon left">
                                 <i id="fa" class="fa fa-2x fa-user"/>
                             </p:inputText>
@@ -150,8 +153,8 @@
                         </div>
                     </div>
 
-                    <div class="ui-g-8 ui-sm-12">
-                        <div class="material icon-left">
+                    <div class="ui-g-6 ui-sm-12">
+                        <div class="ui-material icon-left">
                             <p:calendar id="material-calendar-left" showOn="both" placeholder="Icon left calendar"
                                         required="true">
                                 <p:ajax event="dateSelect" global="false" onstart="adminMaterial()"/>
@@ -161,7 +164,7 @@
                         </div>
                     </div>
 
-                    <div class="ui-g-8 ui-sm-12">
+                    <div class="ui-g-12">
                         <div class="ui-material">
                             <p:keyboard id="keyboard" placeholder="keyboard" required="true"/>
                             <p:outputLabel for="keyboard" value="Keyboard"/>
@@ -169,9 +172,7 @@
                         </div>
                     </div>
 
-                    <div class="ui-g-4">
-                    </div>
-                    <div class="ui-g-4">
+                    <div class="ui-g-12">
                         <p:commandButton id="submitButton" styleClass="btn-primary" value="Submit" update="@form"
                                          ignoreAutoUpdate="true"/>
                     </div>
@@ -179,7 +180,7 @@
             </h:form>
 
         </p:panel>
-        <div class="callout callout-danger" style="margin-top: 30px">
+        <div class="callout-card callout-danger" style="margin-top: 30px">
             <p>Note that <code>p:calendar</code> needs to call a javascript on date select event, that is needed
                 because Primefaces doesn't trigger any javascript event on date select and we use javascript (adminMaterial function) to make the label
                 <code>float</code>
@@ -189,7 +190,7 @@
         </div>
 
 
-        <div class="callout callout-warning" style="margin-top: 30px">
+        <div class="callout-card callout-warning" style="margin-top: 30px">
             <p>Material inputs depend on <code>Admin Template javascript to work</code>, so if you use <b>admin-theme</b> without template you must add <a style="font-weight: bold" href="https://github.com/adminfaces/admin-template/blob/master/src/main/resources/META-INF/resources/js/admintemplate.js">admintemplate.js</a> in you application</p>
         </div>
     </ui:define>

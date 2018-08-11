@@ -4,7 +4,7 @@
                 xmlns:p="http://primefaces.org/ui"
                 xmlns:f="http://java.sun.com/jsf/core"
                 template="#{layoutMB.template}">
-
+    
     <ui:param name="title" value="Dialog"/> <!-- will be used for bradCrumb and page title -->
 
     <ui:define name="description">
@@ -38,8 +38,22 @@
                 </div>
             </div>
         </h:form>
-        <hr/>
         <div class="row">
+            <div class="col-sm-12 col-md-3">
+                <h:form>
+                    <p:commandButton id="bt-destroy" value="Confirm dialog" styleClass="bg-black btn-states btn-block"
+                                     actionListener="#{dialogMB.destroyWorld}" icon="fa fa-question">
+                        <p:confirm header="Confirmation" message="Are you sure?" icon="ui-icon-alert"/>
+                    </p:commandButton>
+
+                    <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" styleClass="box-solid box-danger">
+                        <p:commandButton value="Yes" type="button" styleClass="btn-material btn-primary ui-confirmdialog-yes"
+                                         icon="fa fa-check"/>
+                        <p:commandButton value="No" type="button" styleClass="btn-material btn-danger ui-confirmdialog-no"
+                                         icon="fa fa-close"/>
+                    </p:confirmDialog>
+                </h:form>
+            </div>
             <div class="col-sm-12 col-md-3">
                 <p:button value="Dialog default" onclick="PF('dlgDefault').show();return false"
                           styleClass="btn-default btn-block"/>
@@ -71,23 +85,7 @@
             </div>
             <div class="col-sm-12 col-md-3">
                 <h:form>
-                    <p:commandButton id="bt-destroy" value="Destroy the World" styleClass="bg-black btn-block"
-                                     actionListener="#{dialogMB.destroyWorld}">
-                        <p:confirm header="Confirmation" message="Are you sure?" icon="ui-icon-alert"/>
-                    </p:commandButton>
-
-                    <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" styleClass="box-warning">
-                        <p:commandButton value="Yes" type="button" styleClass="btn-primary ui-confirmdialog-yes"
-                                         icon="fa fa-check"/>
-                        <p:commandButton value="No" type="button" styleClass="btn-danger ui-confirmdialog-no"
-                                         icon="fa fa-close"/>
-                    </p:confirmDialog>
-                </h:form>
-            </div>
-
-            <div class="col-sm-12 col-md-3">
-                <h:form>
-                    <p:commandButton value="Dialog framework" icon="fa fa-link" styleClass="bg-aqua btn-block"
+                    <p:commandButton value="Dialog framework" icon="fa fa-link" styleClass="bg-aqua btn-states btn-block"
                                      process="@this" update="@none"
                                      actionListener="#{dfRootMB.openLevel1}">
                         <p:ajax event="dialogReturn" listener="#{dfRootMB.onReturnFromLevel1}"/>
@@ -157,7 +155,7 @@
         </p:dialog>
 
         <p:dialog header="Dialog primary solid" styleClass="box-solid box-primary" widgetVar="dlgPrimarySolid" minHeight="100" modal="true"
-                  >
+                 appendTo="@(body)" >
             <h:outputText value="Resistance to PrimeFaces is futile!"/>
         </p:dialog>
         <p:dialog header="Dialog danger solid" styleClass="box-solid box-danger" widgetVar="dlgDangerSolid" minHeight="100" modal="true"
@@ -228,6 +226,14 @@
                 div.ui-dialog.dialog-login {
                     width: 350px !important;
                 }
+            }
+              
+            body .ui-dialog.ui-widget-content.dlg2 {
+                z-index:1032!important;
+            }
+            
+            body .ui-dialog.ui-widget-content.dlg3 {
+                z-index:1033!important;
             }
         </style>
     </ui:define>
